@@ -1,11 +1,14 @@
 I used help to create thr right axes and then implemented it in the barplot
-output: fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(12, 10)) 
+AI output: fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(12, 10)) 
 
 
-output:
+In order to save the figures in the "outputs" folder I created, I got help and used that to save the figures. 
+AI output:
 OUTPUT_DIR = 'outputs'
-
 # Create the directory if it doesn't exist
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
-    print(f"Created output directory: {OUTPUT_DIR}")
+    print(f"Created output directory: {OUTPUT_DIR}")\
+figure_filepath = os.path.join(OUTPUT_DIR, 'sotu_word_comparison_barplots.png')
+# Use bbox_inches='tight' to ensure titles and rotated labels aren't cut off
+plt.savefig(figure_filepath, bbox_inches='tight')
