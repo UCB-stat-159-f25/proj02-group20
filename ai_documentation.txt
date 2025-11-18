@@ -1,0 +1,2 @@
+I used help to create thr right axes and then implemented it in the barplot
+output: fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(12, 10)) 
