@@ -1,2 +1,11 @@
 I used help to create thr right axes and then implemented it in the barplot
 output: fig, axes = plt.subplots(nrows=2, ncols=1, figsize=(12, 10)) 
+
+
+output:
+OUTPUT_DIR = 'outputs'
+
+# Create the directory if it doesn't exist
+if not os.path.exists(OUTPUT_DIR):
+    os.makedirs(OUTPUT_DIR)
+    print(f"Created output directory: {OUTPUT_DIR}")
