@@ -25,7 +25,7 @@ dependencies:
   - requests
   - pip:
     - bertopic
-	- sentence-transformers
-	- transformers
-	- torch
-	- pyldavis
+    - sentence-transformers
+    - transformers
+    - torch
+    - pyldavis
