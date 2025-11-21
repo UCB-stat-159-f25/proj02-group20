@@ -19,4 +19,4 @@ It includes four notebooks:
 - `nlp-P04.ipynb`: Part 4 – Choose your own adventure (economic language trends)
 
 GitHub Pages site (Jupyter Book build):
-- https://ucb-stat-159-f25.github.io/proj02-group20/README.html
+- https://stat159.datahub.berkeley.edu/user/ericgwon1001/myst-build/proj02-group20/nlp-p01/
