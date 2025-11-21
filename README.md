@@ -4,15 +4,19 @@ Template repository for Project 2, Stat 159/259 Fall 2025
 
 
 ## Project 2 – Reproducibility in Natural Language Processing
+### Binder for all notebooks:
+- Notebook 1 (Part 1):
+- Notebook 2 (Part 2):
+- Notebook 3 (Part 3):
+- Notebook 4 (Part 4):
 
+### MYST Website:
 This repository contains our work for Stat 159/259 Project 2.
 It includes four notebooks:
-
 - `nlp-P01.ipynb`: Part 1 – Data loading and exploration  
 - `nlp-P02.ipynb`: Part 2 – Simple text processing  
 - `nlp-P03.ipynb`: Part 3 – Topic modeling (LDA and BERTopic)  
 - `nlp-P04.ipynb`: Part 4 – Choose your own adventure (economic language trends)
 
 GitHub Pages site (Jupyter Book build):
-
 - https://ucb-stat-159-f25.github.io/proj02-group20/README.html
