@@ -1,0 +1,8 @@
+format: jb-book
+root: README
+
+chapters:
+  - file: nlp-P01
+  - file: nlp-P02
+  - file: nlp-P03
+  - file: nlp-P04
