@@ -12,3 +12,23 @@ if not os.path.exists(OUTPUT_DIR):
 figure_filepath = os.path.join(OUTPUT_DIR, 'sotu_word_comparison_barplots.png')
 # Use bbox_inches='tight' to ensure titles and rotated labels aren't cut off
 plt.savefig(figure_filepath, bbox_inches='tight')
+
+
+
+AI tool used: ChatGPT (OpenAI)
+
+How it was used:
+- Helped brainstorm and refine the research question for Part 4.
+- Suggested code structure for filtering speeches by year and party and counting
+  economic-related keywords ("jobs", "job", "economy", "growth").
+- Helped write short summaries for the Results and Discussion sections.
+- Helped with Git / GitHub Pages / Jupyter Book configuration commands.
+
+Example prompt (shortened):
+"Write Python code in the style of Stat 159 to plot how often 'jobs', 'job',
+'economy', and 'growth' appear in State of the Union speeches over time, using
+our existing `sou` DataFrame."
+
+Example response (shortened):
+"Use `sou['Text'].str.lower()` to preprocess, then compute keyword counts per
+year and plot with `matplotlib`..."

@@ -1,3 +1,18 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/7TPcE591)
 # proj02
 Template repository for Project 2, Stat 159/259 Fall 2025
+
+
+## Project 2 – Reproducibility in Natural Language Processing
+
+This repository contains our work for Stat 159/259 Project 2.
+It includes four notebooks:
+
+- `nlp-P01.ipynb`: Part 1 – Data loading and exploration  
+- `nlp-P02.ipynb`: Part 2 – Simple text processing  
+- `nlp-P03.ipynb`: Part 3 – Topic modeling (LDA and BERTopic)  
+- `nlp-P04.ipynb`: Part 4 – Choose your own adventure (economic language trends)
+
+GitHub Pages site (Jupyter Book build):
+
+- https://ucb-stat-159-f25.github.io/proj02-group20/README.html
