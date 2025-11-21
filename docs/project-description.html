@@ -1,0 +1,505 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Project 2: Reproducibility in Natural Langauge Processing &#8212; My Jupyter Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'project-description';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My Jupyter Book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="README.html">
+                    proj02
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nlp-P01.html">Project 2: Reproducibility in Natural Language Processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp-P02.html">Part 2: Simple Text Processing - Tokenization, Lemmatization, Word Frequency, Vectorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nlp-P03.html">Part 3: Advanced Text Processing - LDA and BERTopic Topic Modeling</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="nlp-P04.html"></a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/UCB-stat-159-f25/proj02-group20" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/project-description.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Project 2: Reproducibility in Natural Langauge Processing</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="project-2-reproducibility-in-natural-langauge-processing">
+<h1>Project 2: Reproducibility in Natural Langauge Processing<a class="headerlink" href="#project-2-reproducibility-in-natural-langauge-processing" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Statistics 159/259, Fall 2025</strong></p></li>
+<li><p><strong>Due 11/21/2025, 11:59PM PT</strong></p></li>
+<li><p>Prof. F. Pérez, GSI J. Butler, and GSI S. Andrade, Department of Statistics, UC Berkeley.</p></li>
+<li><p>Your score for this assignment is out of <strong>70 points</strong> (with a potential of 7 points extra credit). This project as a whole accounts for <strong>20% of the final course grade</strong>.</p></li>
+<li><p>Assignment type: <strong>group project assignment</strong></p></li>
+</ul>
+<p>The assignment content is located in <code class="docutils literal notranslate"><span class="pre">proj02-nlp.ipynb</span></code>.</p>
+<p><strong>Learning Objectives:</strong></p>
+<ul class="simple">
+<li><p>Implement Modern NLP Pipelines:</p>
+<ul>
+<li><p>Load and Prepare Data: Ingest and clean a real-world text dataset using pandas.</p></li>
+<li><p>Process Text Efficiently: Implement a text pre-processing pipeline using spaCy, a production-grade NLP library.</p></li>
+<li><p>Understand Core Concepts: Understand the diffence between a token, a lemma, a stop word, and punctuation, and understand why lemmatization was preferred for text analysis prior to LLMs.</p></li>
+</ul>
+</li>
+<li><p>Conduct Core Text Analysis:</p>
+<ul>
+<li><p>Extract Linguistic Features: Use spaCy to efficiently extract lemmas, parts-of-speech, and named entities from raw text.</p></li>
+<li><p>Perform Frequency Analysis: Use spaCy outputs to compare the most frequent words in different documents.</p></li>
+<li><p>Analyze Text Over Time: Compare the language of modern presidents to historical ones, drawing initial conclusions about how political communication has evolved.</p></li>
+</ul>
+</li>
+<li><p>Build and Compare Topic Models:</p>
+<ul>
+<li><p>Vectorize Text: Understand and apply the TF-IDF (Term Frequency-Inverse Document Frequency) vectorization method to prepare text for machine learning.</p></li>
+<li><p>Implement Traditional Topic Modeling: Build, train, and interpret a Latent Dirichlet Allocation (LDA) topic model using gensim to find topics based on word co-occurrence.</p></li>
+<li><p>Implement Modern Topic Modeling: Use BERTopic to leverage transformer embeddings (BERT), clustering, and semantic similarity to discover conceptually coherent topics.</p></li>
+<li><p>Critically Evaluate Models: Compare the topics generated by LDA and BERTopic, analyzing the trade-offs and advantages of each approach (i.e., “bag-of-words” vs. “semantic similarity”).</p></li>
+</ul>
+</li>
+<li><p>Reproducibility and Collaboration:</p>
+<ul>
+<li><p>Work on more open-ended questions that involve self learning, utilization of external resources, and exploration</p></li>
+<li><p>Collaboration on Complex Projects: Gain experience coordinating on teams to complete tasks with dependencies on each other</p></li>
+<li><p>Reproducibility: Gain experience describing your work in accessibile formats and making it reproducible.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Deliverables:</strong> For this assignment, you will have a single GitHub repository for your group. Your repository should contain the following:</p>
+<ul class="simple">
+<li><p>One notebook for each of Parts 1, 2, and 3 in the assignment notebook <code class="docutils literal notranslate"><span class="pre">proj02-nlp.ipynb</span></code> (and Part 4 if you wish to do it) that includes code to create the plots and simulations the question asks for, along with any written responses, commentary, discussion, and documentation where applicable. Please name each notebook using the convention <code class="docutils literal notranslate"><span class="pre">nlp-PXX.ipynb</span></code>, with <code class="docutils literal notranslate"><span class="pre">XX</span></code> corresponding to the number of the part. Please remember to use markdown headings for each section/subsection so the entire notebook document is readable. All figures should be both rendered in the notebook and saved in a separate folder called <code class="docutils literal notranslate"><span class="pre">outputs</span></code>. <em>Please also make sure to structure your notebooks as if you were conducting this as a clean and nicely presented data analysis report. Do not include our prompts/problem statements in the final report notebooks.</em></p></li>
+<li><p>Complete the contribution statement in <code class="docutils literal notranslate"><span class="pre">contribution_statement.md</span></code>, briefly and qualitatively detailing each group member’s contributions to the assignment.</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">ai_documentation.txt</span></code> file where your group will put any prompts and output from AI companions.</p></li>
+<li><p>A README describing the aims of the project, with a Binder link to the repo so your notebooks can be run.</p></li>
+<li><p>A MyST Site for your project, deployed to GitHub Pages. Each notebook should have its own tab on the website.</p></li>
+</ul>
+<p>There are two core components to this homework:</p>
+<ol class="arabic simple">
+<li><p>Working with text data building from simple to complex methods (Parts 1-4).</p></li>
+<li><p>Building a reproducible and structured repository (Part 5).</p></li>
+</ol>
+<p>We have provided you with detailed questions with hints and will cover similar material in the lab.</p>
+<p>The total grade for this homework is divided between:</p>
+<ul class="simple">
+<li><p>[15 Points] Part 1: Data loading and Initial Exploration.</p></li>
+<li><p>[20 Points] Part 2: Simple Text Processing - Tokenization, Lemmatization, Word Frequency, Vectorization.</p></li>
+<li><p>[20 Points] Part 3:  Advanced Text Processing - LDA and BERTopic Topic Modeling</p></li>
+<li><p>[Extra Credit: 7 Points] Part 4: Choose your own adventure!</p></li>
+<li><p>[15 Points] Part 5: Project Structure</p></li>
+</ul>
+<p>Parts 1-4 will each be graded from their respective notebooks. Part 5 will be graded by assessing whether all deliverables mentioned above are present, as well as your team’s use of git (e.g. effective commit messages, use of .gitignore for handling extraneous/unnecessary files, repo organization, etc.)</p>
+<p>When running your analyses and making plots, it may be useful to save intermediate steps, such as vectorized data files and then read them in order to make just the plots.</p>
+<p><strong>Note: The parts successively build on each other, so you will need to strategize how to divde and conquer in your groups. For example, some topic models from part 3 require the vectorization used in part 2.</strong></p>
+<p><strong>Acknowledgment:</strong> This homework assignment has been revamped from the previous Spring 2017 assignment created by Prof Fernando Perez and Eli Ben-Michael, adapted from Prof Deb Nolan previous version of this project. The data from the project is from a Kaggle dataset here: <a class="reference external" href="https://www.kaggle.com/datasets/nicholasheyerdahl/state-of-the-union-address-texts-1790-2024?resource=download">https://www.kaggle.com/datasets/nicholasheyerdahl/state-of-the-union-address-texts-1790-2024?resource=download</a></p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
